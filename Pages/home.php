@@ -2,7 +2,6 @@
 
 include "../Functions/links.php";
 include "../Functions/query.php";
-
 ?>
 	<!-- top two elements -->
 	<div class=" container col-lg-12 col-md-12 col-sm-12" style="height:350px; background-color:#d01d3a; padding-left: 0px; padding-right: 0px;">
@@ -44,8 +43,8 @@ include "../Functions/query.php";
 		    
 		    <div class="pull-left">
 				<h1><?php echo $_SESSION['Job_Title']; ?></h1>
-				<h4><?php echo $_SESSION['Comapny_N']; ?></h4>
-				<h4><?php echo $_SESSION['Comapny_E']; ?></h4>
+				<h4><?php echo $_SESSION['Company_N']; ?></h4>
+				<h4><?php echo $_SESSION['Company_E']; ?></h4>
 
 				<p><?php echo $_SESSION['Profile_Descrip']; ?></p>
 			</div>

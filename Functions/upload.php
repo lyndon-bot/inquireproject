@@ -103,6 +103,11 @@ $Company_N = $_POST['Company_N'];
 $Company_E = $_POST['Company_E'];
 //$Profile_Pic = $_POST['Profile_Pic'];
 $Profile_Descrip = $_POST['Profile_Descrip'];
+
+$_SESSION['Job_Title'] = $Job_Title;
+$_SESSION['Company_N'] = $Company_N;
+$_SESSION['Company_E'] = $Company_E;
+$_SESSION['Profile_Descrip'] = $Profile_Descrip;
 //$Refrenece_Vid = $_POST['Refrenece_Vid'];
 //$Bio_Vid = $_POST['Bio_Vid'];
 
@@ -115,6 +120,6 @@ upload('Refrenece_Vid');
 upload('Bio_Vid');
  
 
-//header('location:../Pages/profileset.php');
+header('location:../Pages/home.php');
 ?>
 
