@@ -4,6 +4,7 @@ include "query.php";
 session_start();
 
 $U_id = $_SESSION['U_id'];
+echo $U_id;
 /*
 $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
 $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
@@ -52,7 +53,7 @@ else
 
 function upload($upload_f){
 
-        
+    $Email = $_SESSION['email'];
     $U_id = $_SESSION['U_id'];
     
 	if(isset($_FILES["$upload_f"])){
@@ -85,7 +86,7 @@ function upload($upload_f){
 
 						echo $file_destination;
 						$_SESSION["$upload_f"] = $file_destination;
-                                                query("update users set $upload_f = '$file_destination where U_id = $U_id");
+                                                query("update users set Profile_Pic = '$file_destination' where Email = '$Email'");
 
 					}
 
@@ -116,10 +117,10 @@ $Email = $_SESSION['email'];
 query("update users set Job_Title = '$Job_Title' ,Company_N = '$Company_N' ,Company_E = '$Company_E' ,Profile_Descrip = '$Profile_Descrip' where Email = '$Email'");
 
 upload('Profile_Pic');
-upload('Refrenece_Vid');
-upload('Bio_Vid');
+//upload('Refrenece_Vid');
+//upload('Bio_Vid');
  
 
-header('location:../Pages/home.php');
+//header('location:../Pages/profileset.php');
 ?>
 

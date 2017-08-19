@@ -30,7 +30,7 @@ include "../Functions/query.php";
 
 			<div class=" container-fluid panel panel-inverse col-lg-4 col-md-4 col-sm-4" style="margin-top: 1%; height:300px; background: transparent;"> 
 
-	        <img src="../Style/IMG/Logo/dreamstime_l_28065567.jpg" class="img-rectangle" alt="Cinque Terre" width="100%" height="300">
+	        <img src="<?php>echo '../Functions/uploads/' . $_SESSION['Profile_Pic']; <?>" class="img-rectangle" alt="Cinque Terre" width="100%" height="300">
 
 	   		</div>
 
