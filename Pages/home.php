@@ -29,9 +29,11 @@ include "../Functions/query.php";
 		<div class="container-fluid col-lg-8 col-lg-offset-0 col-md-8 col-sm-8" style="background-color: transparent; border-color:#d01d3a; height:325px; color: white;">
 
 			<div class=" container-fluid panel panel-inverse col-lg-4 col-md-4 col-sm-4" style="margin-top: 1%; height:300px; background: transparent;"> 
+                    <?php	
+                             $pic = $_SESSION['Profile_Pic'];
+                              echo "<img src='../Functions/".$pic."' class='img-rectangle' alt='Cinque Terre' width='100%' height='300'>";
 
-	        <img src="<?php>echo '../Functions/' . $_SESSION['Profile_Pic']; <?>" class="img-rectangle" alt="Cinque Terre" width="100%" height="300">
-
+                    ?>
 	   		</div>
 
 		   	<div class=" col-lg-8 col-md-8 col-sm-8" style="margin-top: 1%;text-align: left;">
