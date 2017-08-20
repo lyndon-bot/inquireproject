@@ -4,6 +4,7 @@ include "query.php";
 session_start();
 
 $U_id = $_SESSION['U_id'];
+echo $_SESSION['fname'];
 echo $U_id;
 /*
 $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
@@ -121,6 +122,6 @@ upload('Profile_Pic');
 //upload('Bio_Vid');
  
 
-//header('location:../Pages/profileset.php');
+header('location:../Pages/profileset.php');
 ?>
 

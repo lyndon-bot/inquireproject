@@ -1,9 +1,7 @@
-<html>
-    
-    <form action="../Functions/upload.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" />
-        <input type="submit" name="submit" value="Upload"/>
-    </form>
-    
-    
-</html>
+<?php 
+
+
+
+session_start();
+$pic = $_SESSION['Profile_Pic'];
+echo "<img src='../Functions/' class='img-rectangle' alt='Cinque Terre' width='100%' height='300'>";

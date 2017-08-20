@@ -12,8 +12,7 @@ function login ($email,$password){
 
 
 	} else {
-		
-		header("location:../Pages/home.php");
+	
 
 		session_start();
 
@@ -24,6 +23,8 @@ function login ($email,$password){
 		$_SESSION['email'] = $get['Email']; 
 		$_SESSION['perm'] =  $get['Perm']; 
                 $_SESSION['U_id'] = $get['U_id'];
+                
+                header("location:../Pages/home.php");
 
 
 	}
