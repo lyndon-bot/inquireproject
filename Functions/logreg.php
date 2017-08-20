@@ -45,6 +45,14 @@ function register ($fname,$lname,$email,$password){
 	$_SESSION['lname'] = "$lname"; 
 	$_SESSION['email'] = "$email"; 
 	$_SESSION['perm'] = "EU"; 
+        
+        $get = fetch(query("select * from users where Email = '$email' && Password = '$password'"));
+
+		$_SESSION['fname'] = $get['F_name']; 
+		$_SESSION['lname'] = $get['L_name']; 
+		$_SESSION['email'] = $get['Email']; 
+		$_SESSION['perm'] =  $get['Perm']; 
+                $_SESSION['U_id'] = $get['U_id'];
 
 	header("location:../Pages/profileset.php");
 
