@@ -122,6 +122,6 @@ upload('Profile_Pic');
 //upload('Bio_Vid');
  
 
-header('location:../Pages/profileset.php');
+header('location:../Pages/home.php');
 ?>
 
