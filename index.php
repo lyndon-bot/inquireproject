@@ -83,7 +83,7 @@ include "Functions/conn.php";
 				 <img style="height: 200px;" src="Style/IMG/Logo/iamlogo2.png">
 				 	<form method="post" action="Functions/logreg.php" >
 				 		<h2 style=" margin-bottom: 10px; color:#8a8d8f;" class="jumbotron-header"> Login </h2>
-				 		<input style=" margin-bottom: 5px;" class="form-control" placeholder="Username" name="username" required />
+				 		<input style=" margin-bottom: 5px;" class="form-control" placeholder="Email" name="username" required />
 						<input style=" margin-bottom: 5px;" class="form-control" placeholder="Password" name="password" required />
 						<button style=" margin-bottom: 15px;background-color:#d01d3a; border-color:#d01d3a;" class="btn btn-primary form-control" name="submit" value="1">Login</button>
 					</form>

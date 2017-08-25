@@ -1,11 +1,8 @@
 <?php
-
-include "query.php";
+include_once("query.php");
 session_start();
 
 $U_id = $_SESSION['U_id'];
-echo $_SESSION['fname'];
-echo $U_id;
 /*
 $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
 $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
