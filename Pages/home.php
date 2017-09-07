@@ -22,7 +22,7 @@ include "../Functions/query.php";
 			        </ul>
 			    </nav>
 			    
-			    <img style="height: 250px; margin-bottom: 12%;" src="../Style/IMG/Logo/iamlogo2.png">
+			    <img style="height: 250px; margin-bottom: 12%; padding-bottom: 25px;" src="../Style/IMG/Logo/iamlogo2.png">
 
 		</div>
 
@@ -31,9 +31,9 @@ include "../Functions/query.php";
 			<div class=" container-fluid panel panel-inverse col-lg-4 col-md-4 col-sm-4" style="margin-top: 1%; height:300px; background: transparent;"> 
                     <?php	
                              $pic = $_SESSION['Profile_Pic'];
-                              echo "<img src='../Functions/".$pic."' class='img-rectangle' alt='Cinque Terre' width='100%' height='300'>";
+                              echo "<img src='../Style/IMG/Button/i_ambutton2.png".$pic."' class='img-rectangle' alt='Cinque Terre' width='100%' height='300'>";
 
-                    ?>
+                    ?> 
 	   		</div>
 
 		   	<div class=" col-lg-8 col-md-8 col-sm-8" style="margin-top: 1%;text-align: left;">
@@ -60,9 +60,11 @@ include "../Functions/query.php";
 	</div>
 
 	<!-- middle elements -->
-	<div class=" container col-lg-12 col-md-12 col-sm-12" style="height:160px; background-color: black;"> 
-
-			<div class="card-group col-lg-6" style="display: flex;">
+	<div class=" container col-lg-12 col-md-12 col-sm-12" style="height:200px; background-color: black;"> 
+			<div class="card-group col-lg-6" style="display: flex; padding-top: 10px;">
+				<div class=" container">
+				        <button class=" btn btn-xs btn-primary" style="background-color:#d01d3a; border-color: black; width: 150px;">Who's Viewed My Videos</button>
+				</div>
 			  <div class="card">
 			    <img class="card-img-top" src="..." alt="Card image cap">
 			    <div class="card-block">
@@ -106,7 +108,7 @@ include "../Functions/query.php";
 
 			</div>
 
-			<div class="card-group col-lg-6" style="display: flex; justify-content: center;">
+			<div class="card-group col-lg-6" style="display: flex; justify-content: center; padding-top: 10px;">
 			  <div class="card">
 			    <img class="card-img-top" src="..." alt="Card image cap">
 			    <div class="card-block">
@@ -149,10 +151,12 @@ include "../Functions/query.php";
 			  </div>
 			</div>
 	</div>
+	
+	
 
 	<div class=" container col-lg-12 col-md-12 col-sm-12" style="height:160px; background-color: black; margin-top: 5px;"> 
 
-			<div class="card-group" style="display: flex; justify-content: center;">
+			<div class="card-group" style="display: flex; justify-content: center; padding-top: 10px;">
 			  <div class="card">
 			    <img class="card-img-top" src="..." alt="Card image cap">
 			    <div class="card-block">

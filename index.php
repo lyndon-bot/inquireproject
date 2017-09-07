@@ -36,7 +36,7 @@ include "Functions/conn.php";
 			
 		<nav class="navbar navbar-inverse" id="navbar" >
 
-			<div class="container-fluid"> 
+			<div class="container"> 
 				<div class="navbar-header"> 
 
 					<img class="navimg" src="Style/IMG/Button/i_ambutton2.png" width="60px" />
@@ -153,9 +153,15 @@ include "Functions/conn.php";
 			</div>
 			
 		</div>
+	
+	<div>
 			
 	<?php
 
 	include "Functions/footer.php"; 
 	?>
+	
+	</div>
+	</body>
+
 		

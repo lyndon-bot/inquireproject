@@ -1,10 +1,6 @@
-<?php 
 
 
-
-?>
-
-<nav class="navbar navbar-inverse navbar-fixed-bottom" id="navbar" style="background-color: transparent;">
+<nav class="navbar navbar-inverse" id="navbar" style="background-color: transparent;">
 
 				<div class="col-md-1 col-lg-1 col-sm-1"> 
 
