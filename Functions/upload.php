@@ -1,11 +1,8 @@
 <?php
-
-include "query.php";
+include_once("query.php");
 session_start();
 
 $U_id = $_SESSION['U_id'];
-echo $_SESSION['fname'];
-echo $U_id;
 /*
 $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
 $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
@@ -78,7 +75,6 @@ function upload($upload_f){
 
 		if(in_array($file_ext, $allowed)){
 			if($file_error === 0) {
-				if($file_size <= 4097152) {
 
 					$file_name_new = $U_id .'_' . $upload_f. '.' . $file_ext;
 					$file_destination = 'uploads/' . $file_name_new;
@@ -87,11 +83,10 @@ function upload($upload_f){
 
 						echo $file_destination;
 						$_SESSION["$upload_f"] = $file_destination;
-                                                query("update users set Profile_Pic = '$file_destination' where Email = '$Email'");
+                                                query("update users set $upload_f  = '$file_destination' where Email = '$Email'");
+                                                echo "successful";
 
-					}
-
-				}
+					}				
 
 			}
 		}
@@ -118,8 +113,8 @@ $Email = $_SESSION['email'];
 query("update users set Job_Title = '$Job_Title' ,Company_N = '$Company_N' ,Company_E = '$Company_E' ,Profile_Descrip = '$Profile_Descrip' where Email = '$Email'");
 
 upload('Profile_Pic');
-//upload('Refrenece_Vid');
-//upload('Bio_Vid');
+upload('Refrenece_Vid');
+upload('Bio_Vid');
  
 
 header('location:../Pages/home.php');

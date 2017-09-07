@@ -23,9 +23,7 @@ include "../Functions/links.php";
 				<input style="width:260px" oninput=" CheckPassSame()" id="Form1_Pass" class=" form-group form-control pull-left" type="password" placeholder="password" value="<?php //echo $password;?>" name="Password" required/>
 				<input  style="width:260px" oninput=" CheckPassSame()" id="Form1_Pass2" class=" form-group form-control pull-right" type="password" placeholder="Confirm Password " name="CPassword" required/>
 				<button  style=" background-color:#d01d3a; border-color:#d01d3a;" class="form-control from-group btn btn-success" name="submit" value="2"> Submit</button>
-
 			</form>
-			
-<?php 
+			<?php if(isset($_SESSION['Errmsg'])){ echo "<script>alert('".$_SESSION['Errmsg']."')</script>";} 
 include "../Functions/footer.php";
 ?>

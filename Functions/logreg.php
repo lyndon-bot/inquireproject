@@ -8,7 +8,7 @@ function login ($email,$password){
 
 	if(mysqli_num_rows(query("select * from users where Email = '$email' && Password = '$password'")) == 0){
 		
-		header("location:../index.php");
+		header("location: ../index.php");
 
 
 	} else {
@@ -16,15 +16,14 @@ function login ($email,$password){
 
 		session_start();
 
-		$get = fetch(query("select * from users where Email = '$email' && Password = '$password'"));
+		$get = fetch("select * from users where Email = '$email' && Password = '$password'");
 
 		$_SESSION['fname'] = $get['F_name']; 
 		$_SESSION['lname'] = $get['L_name']; 
 		$_SESSION['email'] = $get['Email']; 
 		$_SESSION['perm'] =  $get['Perm']; 
-                $_SESSION['U_id'] = $get['U_id'];
-                
-                header("location:../Pages/home.php");
+                $_SESSION['U_id'] = $get['U_id']; 
+                header("location: ../Pages/search.php");
 
 
 	}
@@ -36,18 +35,22 @@ function register ($fname,$lname,$email,$password){
 
 	include "query.php";
 
+	if(mysqli_num_rows(query("select * from users where Email = '$email'")) == 0){
+		$register = query("insert into users (F_name,L_name,Email,Password,Perm) values ('$fname','$lname','$email','$password','EU')");
 
-	$register = query("insert into users (F_name,L_name,Email,Password,Perm) values ('$fname','$lname','$email','$password','EU')");
+		session_start();
 
-	session_start();
+		$_SESSION['fname'] = "$fname"; 
+		$_SESSION['lname'] = "$lname"; 
+		$_SESSION['email'] = "$email"; 
+		$_SESSION['perm'] = "EU"; 
 
-	$_SESSION['fname'] = "$fname"; 
-	$_SESSION['lname'] = "$lname"; 
-	$_SESSION['email'] = "$email"; 
-	$_SESSION['perm'] = "EU"; 
-
-	header("location:../Pages/profileset.php");
-
+		header("location:../Pages/profileset.php");
+	} else {
+		session_start();
+		$_SESSION['Errmsg'] = "Email already used";
+		header("Location: ../Pages/signup.php");
+	}
 }
 
 switch($submit) {

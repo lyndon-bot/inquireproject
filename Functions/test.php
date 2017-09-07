@@ -6,8 +6,9 @@
 if (isset($_REQUEST['upload']))
 {
 $name=$_FILES['uploadvideo']['name'];
- $type=$_FILES['uploadvideo']['type'];
-//$size=$_FILES['uploadvideo']['size'];
+echo $name;
+$type=$_FILES['uploadvideo']['type'];
+$size=$_FILES['uploadvideo']['size'];
 $cname=str_replace(" ","_",$name);
 $tmp_name=$_FILES['uploadvideo']['tmp_name'];
 $target_path="video/";
@@ -20,8 +21,3 @@ echo "Your video ".$cname." has been successfully uploaded";
 }
 }
 ?>
-<form name="video" enctype="multipart/form-data" method="post" action="">
-<input name="MAX_FILE_SIZE" value="100000000000000"  type="hidden"/>
-<input type="file" name="uploadvideo" />
-<input type="submit" name="upload" value="SUBMIT" />
-</form>
