@@ -13,10 +13,10 @@ include "../Functions/query.php";
 			        <ul class="nav navbar-nav">
 			            
 			                <li><a class="navbar-brand"><span class="material-icons">home</a></li>
-			                <li><a><span class="material-icons">mail</span></a></li>
+			                <li><a href="inbox.php"><span class="material-icons">mail</span></a></li>
 			                <li><a><span class="material-icons">assignment_ind</span></a></li>
-			                <li><a><span class="material-icons">person</span></a></li>
-			                <li><a><span class="material-icons">person_add</span></a></li>
+			                <li><a href="profile.php"><span class="material-icons">person</span></a></li>
+			                <li><a href="search.php"><span class="material-icons">person_add</span></a></li>
 			       
 			            
 			        </ul>

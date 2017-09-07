@@ -1,0 +1,311 @@
+-- phpMyAdmin SQL Dump
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Sep 04, 2017 at 01:24 PM
+-- Server version: 5.7.14
+-- PHP Version: 5.6.25
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `testdb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blogrequest`
+--
+DROP DATABASE testdb;
+CREATE DATABASE testdb;
+use testdb;
+CREATE TABLE `blogrequest` (
+  `B_ID` int(10) NOT NULL,
+  `NWID` int(10) NOT NULL,
+  `Status` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `BlogPost` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `U_ID` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `candidate_index`
+--
+
+CREATE TABLE `candidate_index` (
+  `C_id` int(11) NOT NULL,
+  `U_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `inbox`
+--
+
+CREATE TABLE `inbox` (
+  `I_id` int(11) NOT NULL,
+  `U_id1` int(11) NOT NULL,
+  `U_id2` int(11) NOT NULL,
+  `Subj` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `msg` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `inbox`
+--
+
+INSERT INTO `inbox` (`I_id`, `U_id1`, `U_id2`, `Subj`, `msg`) VALUES
+(1, 14, 7, 'lyndon', 'lzkndlkvnlknv');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `media`
+--
+
+CREATE TABLE `media` (
+  `M_id` int(11) NOT NULL,
+  `U_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `org`
+--
+
+CREATE TABLE `org` (
+  `Org_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `recommender_index`
+--
+
+CREATE TABLE `recommender_index` (
+  `RD_id` int(11) NOT NULL,
+  `Org_id` int(11) NOT NULL,
+  `U_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `recuiter_index`
+--
+
+CREATE TABLE `recuiter_index` (
+  `R_id` int(11) NOT NULL,
+  `U_id` int(11) NOT NULL,
+  `Org_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `U_id` int(11) NOT NULL,
+  `F_name` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `L_name` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `Email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `Password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `Perm` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  `Job_Title` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Company_N` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Company_E` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Profile_Pic` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Profile_Descrip` text COLLATE utf8_unicode_ci,
+  `Refrence_Vid` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Bio_Vid` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`U_id`, `F_name`, `L_name`, `Email`, `Password`, `Perm`, `Job_Title`, `Company_N`, `Company_E`, `Profile_Pic`, `Profile_Descrip`, `Refrence_Vid`, `Bio_Vid`) VALUES
+(1, 'lynson', 'bowen', 'telasd', 'ads', '1', '0', '', '', NULL, '', NULL, NULL),
+(3, 'q', 'q', 'q@gmail.com', '123', 'EU', '0', '', '', 'uploads/3_Profile_Pic.jpg', '', NULL, NULL),
+(4, 'lynson', 'bowen', 'lyndon@gmail.com', '1234', 'EU', '0', '', '', NULL, '', NULL, NULL),
+(5, 't', 't', 't@gmail.com', '123', 'EU', '0', '', '', NULL, '', NULL, NULL),
+(7, 'lyndon', 'bowen', 'lyndonbowen33@gmail.com', '1234', 'EU', 'Desktop Support ', 'Cisco', 'lyndonbowen33@gmail.com', 'uploads/7_Profile_Pic.jpg', 'I am Lyndon \r\n	', NULL, NULL),
+(8, 'lyndon', 'bowen', 'lyndonbowen33@gmail.com', 'Lyndonis#1', 'EU', 'Desktop Support ', 'Cisco', 'lyndonbowen33@gmail.com', NULL, 'I am Lyndon \r\n	', NULL, NULL),
+(9, 'lyndon', 'bowen', 'lyndon33@gmail.com', '123', 'EU', 'asds', 'd', 'sd', 'uploads/3_Profile_Pic.jpg', '		Type Here....\r\n	kcds', NULL, NULL),
+(10, 'Lyndon', 'Bowen Jr', 'bowen@gmail.com', '123', 'EU', NULL, NULL, NULL, 'uploads/_Profile_Pic.jpg', NULL, NULL, NULL),
+(11, 'tom', 'no', 'lynn33@gmail.com', '123', 'EU', 'desktop support', 'cisco', 'lsjdnfljn@gmail.com', 'uploads/_Profile_Pic.jpg', '		Type Here....\r\n	', NULL, NULL),
+(12, 'lyndon', 'hom', 'tom@gmail.com', '123', 'EU', '', '', '', 'uploads/11_Profile_Pic.jpg', '', NULL, NULL),
+(13, 'tristian', 'carter', 'tc@gmail.com', '123', 'EU', 'W', 'WQ', 'WE', 'uploads/_Profile_Pic.jpg', '		Type Here....\r\n	', NULL, NULL),
+(14, 'aleesha', 'rei', 'rei@gmail.com', '123', 'EU', 'zdfs', 'sdf', 'sfd', 'uploads/14_Profile_Pic.jpg', '		Type Here....\r\n	', NULL, 'uploads/14_Bio_Vid.mp4'),
+(15, 'aleesha', 'rei', 'rei@gmail.com', '123', 'EU', 'zdfs', 'sdf', 'sfd', 'uploads/14_Profile_Pic.jpg', '		Type Here....\r\n	', NULL, 'uploads/14_Bio_Vid.mp4'),
+(16, 'aleesha', 'rei', 'rei@gmail.com', '123', 'EU', 'zdfs', 'sdf', 'sfd', 'uploads/14_Profile_Pic.jpg', '		Type Here....\r\n	', NULL, 'uploads/14_Bio_Vid.mp4');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `u_network_index`
+--
+
+CREATE TABLE `u_network_index` (
+  `NWID` int(32) NOT NULL,
+  `U_id` int(32) NOT NULL,
+  `NU_id` int(32) NOT NULL,
+  `Status` varchar(32) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Pending',
+  `DateConnected` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `u_network_index`
+--
+
+INSERT INTO `u_network_index` (`NWID`, `U_id`, `NU_id`, `Status`, `DateConnected`) VALUES
+(1, 14, 7, 'Connection', '2017-09-03 22:08:30'),
+(2, 14, 7, 'Connection', '2017-09-03 22:15:45');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vidrefrequest`
+--
+
+CREATE TABLE `vidrefrequest` (
+  `VR_ID` int(10) NOT NULL,
+  `NWID` int(10) NOT NULL,
+  `Status` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `Video` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `U_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `blogrequest`
+--
+ALTER TABLE `blogrequest`
+  ADD PRIMARY KEY (`B_ID`);
+
+--
+-- Indexes for table `candidate_index`
+--
+ALTER TABLE `candidate_index`
+  ADD PRIMARY KEY (`C_id`),
+  ADD KEY `U_id` (`U_id`);
+
+--
+-- Indexes for table `inbox`
+--
+ALTER TABLE `inbox`
+  ADD PRIMARY KEY (`I_id`);
+
+--
+-- Indexes for table `media`
+--
+ALTER TABLE `media`
+  ADD PRIMARY KEY (`M_id`),
+  ADD KEY `U_id` (`U_id`);
+
+--
+-- Indexes for table `org`
+--
+ALTER TABLE `org`
+  ADD PRIMARY KEY (`Org_id`);
+
+--
+-- Indexes for table `recommender_index`
+--
+ALTER TABLE `recommender_index`
+  ADD PRIMARY KEY (`RD_id`),
+  ADD KEY `Org_id` (`Org_id`),
+  ADD KEY `U_id` (`U_id`);
+
+--
+-- Indexes for table `recuiter_index`
+--
+ALTER TABLE `recuiter_index`
+  ADD PRIMARY KEY (`R_id`),
+  ADD KEY `U_id` (`U_id`),
+  ADD KEY `Org_id` (`Org_id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`U_id`);
+
+--
+-- Indexes for table `u_network_index`
+--
+ALTER TABLE `u_network_index`
+  ADD PRIMARY KEY (`NWID`);
+
+--
+-- Indexes for table `vidrefrequest`
+--
+ALTER TABLE `vidrefrequest`
+  ADD PRIMARY KEY (`VR_ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `blogrequest`
+--
+ALTER TABLE `blogrequest`
+  MODIFY `B_ID` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `inbox`
+--
+ALTER TABLE `inbox`
+  MODIFY `I_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `U_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT for table `u_network_index`
+--
+ALTER TABLE `u_network_index`
+  MODIFY `NWID` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `vidrefrequest`
+--
+ALTER TABLE `vidrefrequest`
+  MODIFY `VR_ID` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `org`
+--
+ALTER TABLE `org`
+  ADD CONSTRAINT `org_ibfk_1` FOREIGN KEY (`Org_id`) REFERENCES `recommender_index` (`Org_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `recuiter_index`
+--
+ALTER TABLE `recuiter_index`
+  ADD CONSTRAINT `recuiter_index_ibfk_2` FOREIGN KEY (`Org_id`) REFERENCES `org` (`Org_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,12 +1,12 @@
 
 
-<nav class="navbar navbar-inverse" id="navbar" style="background-color: transparent;">
+<nav class="navbar navbar-inverse navbar-fixed-bottom" id="navbar" style="background-color: transparent; margin-top:100px;">
 
 				<div class="col-md-1 col-lg-1 col-sm-1"> 
 
 				</div>
 
-				<ul class="nav navbar-nav" id="navbotland" style="line-height: 0px; padding: 0px; margin:0px; background-color: none;"> 
+				<ul class="nav navbar-nav" id="navbotland" style="line-height: 50px; padding: 0px; margin:0px; background-color: none;"> 
 
 					<li>
 						<p>

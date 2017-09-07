@@ -23,7 +23,7 @@ function login ($email,$password){
 		$_SESSION['email'] = $get['Email']; 
 		$_SESSION['perm'] =  $get['Perm']; 
                 $_SESSION['U_id'] = $get['U_id']; 
-                header("location: ../Pages/search.php");
+                header("location: ../Pages/home.php");
 
 
 	}

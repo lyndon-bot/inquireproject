@@ -84,7 +84,7 @@ include "Functions/conn.php";
 				 	<form method="post" action="Functions/logreg.php" >
 				 		<h2 style=" margin-bottom: 10px; color:#8a8d8f;" class="jumbotron-header"> Login </h2>
 				 		<input style=" margin-bottom: 5px;" class="form-control" placeholder="Email" name="username" required />
-						<input style=" margin-bottom: 5px;" class="form-control" placeholder="Password" name="password" required />
+						<input style=" margin-bottom: 5px;" class="form-control" placeholder="Password" type="password" name="password" required />
 						<button style=" margin-bottom: 15px;background-color:#d01d3a; border-color:#d01d3a;" class="btn btn-primary form-control" name="submit" value="1">Login</button>
 					</form>
 
@@ -99,7 +99,7 @@ include "Functions/conn.php";
 					 <h2> Signup, It's Free!  </h2>
 
 					 <div class=" divcolbot col-sm-2  col-md-2 col-lg-2 " data-toggle="tooltip" title="Individual looking to post videos of references for employment, or to highlight career"> 
-						 <form style="width: 200px;" action="Pages/Signup.php">
+						 <form style="width: 200px;" action="Pages/signup.php">
 
 							 <button style="width: 180px; margin-right: 0px; background-color:#d01d3a; border-color:#d01d3a;" class="btn btn-primary form-control" name="submit" value="1">Employee Prospect</button>
 
