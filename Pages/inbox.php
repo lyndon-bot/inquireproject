@@ -1,6 +1,6 @@
 <?php 
     session_start(); 
-    include "../Functions/header.php";
+    include "../Functions/innerheader.php";
     include "../Functions/query.php";
 ?>
  <?php

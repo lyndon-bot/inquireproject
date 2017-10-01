@@ -1,5 +1,5 @@
 <?php
-include "../Functions/header.php";
+include "../Functions/innerheader.php";
 include "../Functions/query.php";
 session_start();
 $UID =$_SESSION['U_id'];
@@ -11,7 +11,7 @@ $img_path = $user['Profile_Pic'];
 <h1>User info</h1>
 <h4><?php echo "Name: ".$_SESSION['fname']. " " . $_SESSION['lname']  ;?></h4>
 <h4><?php echo "Email: ".$_SESSION['email'];?></h4>
-<img src="<?php echo "../".$img_path;?>"
+<!--<img src="<?php echo "../Functions/".$img_path;?>">-->
 <hr>
 <label>Pending Request</label><br>
 <?php 

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include "links.php";
 
 ?>
@@ -13,9 +13,10 @@ include "links.php";
 			<div class="container-fluid"> 
 				<div class="navbar-header"> 
 
-					<img class="navimg" src="../Style/IMG/Button/i_ambutton2.png" width="60px" />
+					<a href='/Pages/home.php'><img class="navimg" src="../Style/IMG/Button/i_ambutton2.png" width="60px" />
 					<a class="navbar-brand" href="#">
 						 <p><span class="istamp">i</span>nquire<span class="istamp">a</span>bout<span class="istamp">m</span>e</p>
+					</a>
 					</a>
 					
 

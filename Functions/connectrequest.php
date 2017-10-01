@@ -20,6 +20,7 @@ session_start();
 $AcceptConnect = $_POST['accept'];
 $user = $_SESSION['U_id'];
 query("update u_network_index set Status = 'Connection' where U_id = $AcceptConnect and NU_id = $user");
+query("insert into u_network_index (U_id,NU_id,Status) values ('$user','$AcceptConnect','Connection')");
 header("Location: ../Pages/home.php");     
 }
 

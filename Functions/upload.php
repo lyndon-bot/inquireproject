@@ -2,7 +2,6 @@
 include_once("query.php");
 session_start();
 
-$U_id = $_SESSION['U_id'];
 /*
 $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
 $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
@@ -51,9 +50,11 @@ else
 
 function upload($upload_f){
 
-    $Email = $_SESSION['email'];
-    $U_id = $_SESSION['U_id'];
-    
+  $email = $_SESSION['email'];
+  $user = fetch("select * from users where Email = '$email'");
+  $U_id = $user['U_id'];
+  $_SESSION['U_id'] = $user['U_id'];
+
 	if(isset($_FILES["$upload_f"])){
 		//echo "hello";
 		$file = $_FILES["$upload_f"];
@@ -81,10 +82,10 @@ function upload($upload_f){
 
 					if(move_uploaded_file($file_tmp, $file_destination)){
 
-						echo $file_destination;
+						//echo $file_destination;
 						$_SESSION["$upload_f"] = $file_destination;
-                                                query("update users set $upload_f  = '$file_destination' where Email = '$Email'");
-                                                echo "successful";
+                                                query("update users set $upload_f  = '$file_destination' where Email = '$email'");
+                                                //echo "successful";
 
 					}				
 

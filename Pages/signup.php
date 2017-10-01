@@ -20,7 +20,7 @@ include "../Functions/links.php";
 				<input style="width:260px" class=" form-group form-control pull-left" placeholder="First Name " name="F_name" required/>
 				<input style="width:260px" class=" form-group form-control pull-right" placeholder="Last Name " name="L_name" required/>
 				<input  class=" form-group form-control" type="email" placeholder=" Email " name="Email" required/>
-				<input style="width:260px" oninput=" CheckPassSame()" id="Form1_Pass" class=" form-group form-control pull-left" type="password" placeholder="password" value="<?php //echo $password;?>" name="Password" required/>
+				<input style="width:260px" oninput=" CheckPassSame()" id="Form1_Pass" class=" form-group form-control pull-left" type="password" placeholder="Password" value="<?php //echo $password;?>" name="Password" required/>
 				<input  style="width:260px" oninput=" CheckPassSame()" id="Form1_Pass2" class=" form-group form-control pull-right" type="password" placeholder="Confirm Password " name="CPassword" required/>
 				<button  style=" background-color:#d01d3a; border-color:#d01d3a;" class="form-control from-group btn btn-success" name="submit" value="2"> Submit</button>
 			</form>

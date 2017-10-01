@@ -5,7 +5,7 @@ $submit = $_POST['submit'];
 function login ($email,$password){
 
 	include "query.php";
-
+	$password = md5($password);
 	if(mysqli_num_rows(query("select * from users where Email = '$email' && Password = '$password'")) == 0){
 		
 		header("location: ../index.php");
@@ -36,7 +36,9 @@ function register ($fname,$lname,$email,$password){
 	include "query.php";
 
 	if(mysqli_num_rows(query("select * from users where Email = '$email'")) == 0){
-		$register = query("insert into users (F_name,L_name,Email,Password,Perm) values ('$fname','$lname','$email','$password','EU')");
+		$URL = uniqid();
+		$password = md5($password);
+		$register = query("insert into users (F_name,L_name,Email,Password,Perm,URL) values ('$fname','$lname','$email','$password','EU','$URL')");
 
 		session_start();
 

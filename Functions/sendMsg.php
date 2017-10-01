@@ -6,6 +6,7 @@
     $message = $_POST['msg'];
     $U_id2 = $_POST['btn'];
     $U_id1 = $_SESSION['U_id'];
-    query("INSERT INTO inbox VALUES (NULL,'$U_id1','$U_id2', '$subject','$message')");
-    header("Location: ../Pages/inbox.php");
+    $date = date('M d');
+    query("INSERT INTO inbox VALUES (NULL,'$U_id1','$U_id2', '$subject','$message','$date')");
+    header("Location: ../Pages/test.php");
 ?>
